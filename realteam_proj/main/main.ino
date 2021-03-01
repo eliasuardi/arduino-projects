@@ -14,9 +14,8 @@ IPAddress ip(192, 168, 0, 250);
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
 /** specific for esp8266 module **/
-char * ssid = "***REMOVED***";
-char * password = "***REMOVED***";
-
+const char* ssid = "wifi name";
+const char* password = "wifi password";
 
 unsigned long lastConnectionTime = 0;
 const unsigned long postingInterval = 2L * 1000L;
