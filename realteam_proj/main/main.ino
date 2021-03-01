@@ -14,8 +14,8 @@ IPAddress ip(192, 168, 0, 250);
 byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
 /** specific for esp8266 module **/
-char * ssid = "xxxxx";
-char * password = "yyyyy";
+char * ssid = "TIM-19902147";
+char * password = "JsR70ngcE0RgWJJrCyeMbpbL";
 
 
 unsigned long lastConnectionTime = 0;
