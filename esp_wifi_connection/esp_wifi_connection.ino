@@ -1,7 +1,7 @@
 #include <ESP8266WiFi.h>
 
-char * ssid = "TIM-19902147";
-char * password = "JsR70ngcE0RgWJJrCyeMbpbL";
+const char* ssid = "wifi name";
+const char* password = "wifi password";
 
 void setup()
 {
