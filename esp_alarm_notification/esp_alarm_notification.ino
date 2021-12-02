@@ -2,8 +2,8 @@
 #include <ArduinoJson.h>
 #include <SPI.h>
 
-const char* ssid = "***REMOVED***";
-const char* password = "***REMOVED***";
+const char* ssid = "";
+const char* password = "";
 const int buttonPin = 2;    // the number of the pushbutton pin
 
 /** HTTP REQUEST VARIABLES **/
