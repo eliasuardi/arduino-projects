@@ -1,4 +1,5 @@
 #include <ESP8266WiFi.h>
+#include <ESP8266HTTPClient.h>
 #include <ArduinoJson.h>
 #include <SPI.h>
 
@@ -15,6 +16,7 @@ const int REGISTRY_PORT = 8080;
 const char* REGISTRY_PATH = "/server1/api/configuration/arduino/demo_alert";
 
 WiFiClient client;
+HTTPClient httpClient;
 
 unsigned long lastConnectionTime = 0;
 const unsigned long postingInterval = 2L * 1000L;
@@ -68,7 +70,7 @@ void setup()
   Serial.print("Connected, IP address: ");
   Serial.println(WiFi.localIP());
 
-  //httpGetConfiguration(REGISTRY_SERVER, REGISTRY_PORT, REGISTRY_PATH, 5000);
+  httpGetConfiguration(REGISTRY_SERVER, REGISTRY_PORT, REGISTRY_PATH, 5000);
 }
 
 void loop() 
@@ -109,7 +111,7 @@ void loop()
       // only toggle the LED if the new button state is HIGH
       if (buttonPressed == HIGH) {
         buttonState = !buttonState;
-        httpPostObjectEvent(buttonState);
+        httpSendObjectEvent(buttonState);
         Serial.println((buttonState == HIGH) ? "HIGH" : "LOW");
       }
     }
